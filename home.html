@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYGOV</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR start -->
+    <header> 
+        <nav class="navbar">
+          <div class="image-container">
+            <img id="logo" src="image.png" alt="LOGO image">
+            <h1>EasyGov</h1></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="#foot">Contact</a></li>
+                 <div id="google_translate_element"></div>
+                     <script type="text/javascript">
+                      function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                      }
+                     </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+                    <!-- TOGGLE BUTTON -->
+                 
+                    <!-- TOGGLE BUTTON HTML -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" />
+        <label for="theme-switch" class="toggle-label">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </label>
+      </div>
+      <!-- TOGGLE BUTTON JS -->
+    <script>
+const themeSwitch = document.getElementById('theme-switch');
+
+// Check for saved theme in localStorage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+  document.body.className = currentTheme; // Apply saved theme
+  themeSwitch.checked = currentTheme === 'dark-mode'; // Sync toggle state
+}
+
+// Listen for toggle changes
+themeSwitch.addEventListener('change', () => {
+  if (themeSwitch.checked) {
+    document.body.className = 'dark-mode';
+    const cards = document.querySelectorAll(".card")
+    const featureCards = document.querySelectorAll(".feature-card")
+    featureCards.forEach(card => card.style.background = "black") 
+    cards.forEach(card => card.classList.add("dark-mode"))
+    document.querySelector(".features").style.background = "black"
+    localStorage.setItem('theme', 'dark-mode'); // Save preference
+  } else {
+    document.body.className = 'light-mode';
+    const cards = document.querySelectorAll(".card")
+    cards.forEach(card => card.classList.remove("dark-mode"))
+    const featureCards = document.querySelectorAll(".feature-card")
+    featureCards.forEach(card => card.style.background = "white") 
+    document.querySelector(".features").style.background = "white"
+
+    localStorage.setItem('theme', 'light-mode'); // Save preference
+  }
+});
+
+   </script>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- navbar END -->
+    <!-- carousel start -->
+    <div id="carouselExampleIndicators" class="carousel slide"  data-bs-interval="3000">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img class="d-block w-100 c-img" src="adharimg.webp" alt="First slide">
+          <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+            <p  id = "typewriter"  class="h5 top-0" >STREAMLINE YOUR GOVERNMENT DOCUMENT APPLICATION</p>
+            <p>...</p>
+            <button class="btn btn-primary"> GUIDES</button>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img class="d-block w-100 c-img" src="panimg3.jpg" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>...</h5>
+            <p>...</p>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img class="d-block w-100 c-img" src="driving_license.jpg" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>...</h5>
+            <p>...</p>
+          </div>
+        </div>
+      </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+      <!--OUR KEY Features Section -->
+      <section id="features" class="features">
+        <h3>Our Key Features</h3>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h4>Multi-Language Support</h4>
+                <p>Accessible for everyone, with support for multiple languages to guide you through each step.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Error-Free Guidance</h4>
+                <p>Get clear instructions to avoid mistakes in your document applications.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Track Application Status</h4>
+                <p>Coming soon: track your document application status directly through our platform. Stay tuned for updates.</p>
+            </div>
+        </div>
+    </section>
+     <!-- Document Application Guides -->
+    <!--application section-->
+    <section id="guides" class="guides">
+      <h3>Document Application Guides</h3>
+      <div class="guide-cards">
+          <!-- adhaar -->
+          <div class="card" style="width: 18rem;">
+              <img src="https://www.livelaw.in/h-upload/2024/07/06/750x450_548125-aadhaar.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">AADHAAR CARD</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="aadhar.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          <!-- pancard -->
+            <div class="card" style="width: 18rem;">
+              <img src="image_16962222672097.webp">
+              <div class="card-body">
+                <h5 class="card-title">PAN CARD</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="pan.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+             <!-- driving license -->
+            <div class="card" style="width: 18rem;">
+              <img src="driving_license_renewal_in_delhi_b703d408f7.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">DRIVING LICENSE</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="DL.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <!-- passport -->
+            <div class="card" style="width: 18rem;">
+              <img src="istockphoto-587806604-612x612.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">PASSPORT</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="passport.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <!-- voterid -->
+            <div class="card" style="width: 18rem;">
+              <img src="Apply-voter-id-online.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">VOTER ID CARD</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="voter.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <!-- marriage -->
+            <div class="card" style="width: 18rem;">
+              <img src="Apply-Marriage-Certificate.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">MARRIAGE CERTIFICATE</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="marriage.html" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+      </div>  
+      
+      <!-- Footer Section -->
+<footer class="footer">
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section id="foot">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>EASYGOV
+          </h6>
+          <p>
+            Streamline Your Government Document Applications .EasyGov helps you apply for government documents with guidance, multiple languages, and simplified steps.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Guides</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+         
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
+          <p><i class="fas fa-home me-3"></i> Ghaziabad 201012 INDIA</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            Easygov@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> +91 xxxxxxxxx</p>
+          <p><i class="fas fa-print me-3"></i> +91 xxxxxxxxx</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Easygov.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+    <!-- bootstrap script -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
